@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="titulo">Listar Reservas</h5>
+        <table class="table">
+            <tbody>
+                <tr *ngFor="let reserva of listaReservas">
+                    <td>{{ reserva.titular }}</td>
+                    <td>{{ reserva.comensales }}</td>
+                    <td>{{ reserva.dia }}</td>
+                    <td>{{ reserva.hora }}</td>
+                    <td>
+                        <i (click)="editarReserva(reserva)" class="far fa-edit text-info"></i>
+                        <i (click)="eliminarReserva(reserva.id)" class="far fa-trash-alt text-danger"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

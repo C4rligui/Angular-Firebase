@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="titulo mb-3">{{ titulo | uppercase }}
+            <div *ngIf="loading" class="spinner-border float-end" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </h5>
+        <form [formGroup]="form" (ngSubmit)="guardarReserva()">
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text">
+                    <i class="fas fa-user-circle" 
+                        [class.green-icon]="this.form.get('titular')?.valid"
+                        [class.red-icon]="this.form.get('titular')?.invalid && this.form.get('titular')?.touched"></i>
+                </span>
+                <input type="text" formControlName="titular" class="form-control" placeholder="Titular">
+            </div>
+            <div class="input-group input-group-lg mb-3">
+                <span class="input-group-text">
+                    <i class="fas fa-utensils"
+                    [class.green-icon]="this.form.get('comensales')?.valid"
+                    [class.red-icon]="this.form.get('comensales')?.invalid && this.form.get('comensales')?.touched"></i>
+                </span>
+                <input type="text" formControlName="comensales" maxlength="2" class="form-control" placeholder="Comensales">
+            </div>
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-calendar"
+                            [class.green-icon]="this.form.get('dia')?.valid"
+                            [class.red-icon]="this.form.get('dia')?.invalid && this.form.get('dia')?.touched"></i>
+                        </span>
+                        <input type="text" formControlName="dia" maxlength="8" class="form-control" placeholder="Día (DD/MM/AA)">
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="input-group input-group-lg mb-3">
+                        <span class="input-group-text">
+                            <i class="fas fa-clock"
+                            [class.green-icon]="this.form.get('hora')?.valid"
+                            [class.red-icon]="this.form.get('hora')?.invalid && this.form.get('hora')?.touched"></i>
+                        </span>
+                        <input type="text" formControlName="hora" maxlength="5" class="form-control" placeholder="Hora (HH:MM)">
+                    </div>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button [disabled]="form.invalid" class="btn btn-success btn-lg" type="submit">
+                    <i class="fas fa-database">&nbsp; Aceptar</i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
