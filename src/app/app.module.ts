@@ -13,16 +13,27 @@ import { ListarReservasComponent } from './components/listar-reservas/listar-res
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { RouterModule, Routes } from '@angular/router';
+import { VerReservasComponent } from './components/ver-reservas/ver-reservas.component';
+import { HomeComponent } from './components/home/home.component';
+
+const appRoutes:Routes= [
+  {path: '', component:HomeComponent},
+  {path:'ver', component:VerReservasComponent}
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     NuevaReservaComponent,
-    ListarReservasComponent
+    ListarReservasComponent,
+    VerReservasComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,

@@ -1,0 +1,30 @@
+<div class="container mt-5">
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="titulo">Listar Reservas</h5>
+                    <table class="myTable">
+                        <thead>
+                            <tr>
+                            <th>Titular</th>
+                            <th>Comensales</th>
+                            <th>Día</th>
+                            <th>Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let reserva of listaReservas">
+                                <td>{{ reserva.titular }}</td>
+                                <td>{{ reserva.comensales }}</td>
+                                <td>{{ reserva.dia }}</td>
+                                <td>{{ reserva.hora }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="" class="btn btn-success btn-lg mt-5">Volver atrás</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

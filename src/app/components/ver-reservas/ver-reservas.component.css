@@ -1,0 +1,45 @@
+.far {
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+table.myTable {
+    border: 2px solid #1D1D1B;
+    background-color: #EEEEEE;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table.myTable td, table.myTable th {
+    border: 1px solid #AAAAAA;
+    padding: 3px 2px;
+}
+
+table.myTable tbody td {
+    font-size: 18px;
+}
+
+table.myTable tr:nth-child(even) {
+    background: #d0f5de;
+}
+
+table.myTable thead {
+    background: #487F2F;
+    background: -moz-linear-gradient(top, #769f63 0%, #5a8b43 66%, #487F2F 100%);
+    background: -webkit-linear-gradient(top, #769f63 0%, #5a8b43 66%, #487F2F 100%);
+    background: linear-gradient(to bottom, #769f63 0%, #5a8b43 66%, #487F2F 100%);
+    border-bottom: 2px solid #444444;
+}
+
+table.myTable thead th {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #D0E4F5;
+}
+
+table.myTable thead th:first-child {
+    border-left: none;
+}
